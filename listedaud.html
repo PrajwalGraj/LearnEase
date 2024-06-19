@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Exercise</title>
+    <link rel="stylesheet" href="listedaud.css">
+</head>
+
+<body>
+    <div style="height: 10vh; padding: 4px 40px; background-color: white;" class="top">
+        <h1>👋 Hey, Welcome Back</h1>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#abc">About</a></li>
+                <li><a href="/ttos.html">Text to Speech</a></li>
+                <li><a href="/stot.html">Speech to Text</a></li>
+                <li><a href="/quizpage.html">Quiz</a></li>
+                <li><a href="/listedaud.html">Listen and Answer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="h1m">Listen to the Audio and type what you heard </h1>
+    <div class="exercise-container">
+        <div class="audio-block">
+            <audio controls>
+                <source src="/audio/Good Morning.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="input-block">
+            <!-- <label for="userAnswer">Type what you heard:</label><br> -->
+            <input type="text" class="uas" id="userAnswer" placeholder="Type what you heard...." name="userAnswer">
+        </div>
+        <div class="check-block">
+            <button class="check" id="checkButton">Check</button>
+            <span class="res" id="result"></span>
+        </div>
+    </div>
+
+    <div class="exercise-container">
+        <div class="audio-block">
+            <audio controls>
+                <source src="/audio/Good night.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="input-block">
+            <!-- <label for="userAnswer">Type what you heard:</label><br> -->
+            <input type="text" class="uas" id="userAnswer2" placeholder="Type what you heard...." name="userAnswer">
+        </div>
+        <div class="check-block">
+            <button class="check" id="checkButton2">Check</button>
+            <span class="res" id="result2"></span>
+        </div>
+    </div>
+
+    <div class="exercise-container">
+        <div class="audio-block">
+            <audio controls>
+                <source src="/audio/How are your.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="input-block">
+            <!-- <label for="userAnswer">Type what you heard:</label><br> -->
+            <input type="text" class="uas" id="userAnswer3" placeholder="Type what you heard...." name="userAnswer">
+        </div>
+        <div class="check-block">
+            <button class="check" id="checkButton3">Check</button>
+            <span class="res" id="result3"></span>
+        </div>
+    </div>
+
+    <div class="exercise-container">
+        <div class="audio-block">
+            <audio controls>
+                <source src="/audio/Hello.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="input-block">
+            <!-- <label for="userAnswer">Type what you heard:</label><br> -->
+            <input type="text" class="uas" id="userAnswer4" placeholder="Type what you heard...." name="userAnswer">
+        </div>
+        <div class="check-block">
+            <button class="check" id="checkButton4">Check</button>
+            <span class="res" id="result4"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    document.getElementById('checkButton').addEventListener('click', function () {
+        const userAnswer = document.getElementById('userAnswer').value.toLowerCase().trim();
+        const expectedAnswer = "good morning"; // Replace "example" with the expected answer
+
+        if (userAnswer === expectedAnswer) {
+            document.getElementById('result').textContent = 'Correct!';
+        } else {
+            document.getElementById('result').textContent = 'Wrong!';
+        }
+    });
+
+
+    document.getElementById('checkButton2').addEventListener('click', function () {
+        const userAnswer = document.getElementById('userAnswer2').value.toLowerCase().trim();
+        const expectedAnswer = "good night"; // Replace "example" with the expected answer
+
+        if (userAnswer === expectedAnswer) {
+            document.getElementById('result2').textContent = 'Correct!';
+        } else {
+            document.getElementById('result2').textContent = 'Wrong!';
+        }
+    });
+
+    document.getElementById('checkButton3').addEventListener('click', function () {
+        const userAnswer = document.getElementById('userAnswer3').value.toLowerCase().trim();
+        const expectedAnswer = "how are you"; // Replace "example" with the expected answer
+
+        if (userAnswer === expectedAnswer) {
+            document.getElementById('result3').textContent = 'Correct!';
+        } else {
+            document.getElementById('result3').textContent = 'Wrong!';
+        }
+    });
+
+    document.getElementById('checkButton4').addEventListener('click', function () {
+        const userAnswer = document.getElementById('userAnswer4').value.toLowerCase().trim();
+        const expectedAnswer = "hello"; // Replace "example" with the expected answer
+
+        if (userAnswer === expectedAnswer) {
+            document.getElementById('result4').textContent = 'Correct!';
+        } else {
+            document.getElementById('result4').textContent = 'Wrong!';
+        }
+    });
+
+</script>
+
+</html>

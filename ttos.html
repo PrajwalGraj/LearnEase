@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech</title>
+    <link rel="stylesheet" href="ttos.css">
+</head>
+<body>
+    <div style="height: 10vh; padding: 4px 40px; background-color: white;" class="top">
+        <h1>👋 Hey, Welcome Back</h1>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#abc">About</a></li>
+                <li><a href="/ttos.html">Text to Speech</a></li>
+                <li><a href="/stot.html">Speech to Text</a></li>
+                <li><a href="/quizpage.html">Quiz</a></li>
+                <li><a href="/listedaud.html">Listen and Answer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="text-to-speech-container">
+        <h1>Text to Speech</h1>
+        <textarea id="textInput" rows="4" placeholder="Enter text here..."></textarea>
+        <button id="speakButton">Speak</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+    const speakButton = document.getElementById('speakButton');
+const textInput = document.getElementById('textInput');
+
+speakButton.addEventListener('click', () => {
+    const text = textInput.value;
+    speakText(text);
+});
+
+function speakText(text) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = text;
+    speech.volume = 1;
+    speech.rate = 0.7;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+</script>
+</html>

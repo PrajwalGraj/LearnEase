@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="quizpage.css">
+</head>
+<body>
+    <div style="height: 10vh; padding: 4px 40px; background-color: white;" class="top">
+        <h1>👋 Hey, Welcome Back</h1>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#abc">About</a></li>
+                <li><a href="/ttos.html">Text to Speech</a></li>
+                <li><a href="/stot.html">Speech to Text</a></li>
+                <li><a href="/quizpage.html">Quiz</a></li>
+                <li><a href="/listedaud.html">Listen and Answer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="quiz-container">
+        <h1>Quiz Time!</h1>
+        <div class="question" id="question1">
+            <p>1. Raju is buying 10 apples from the market today. <br>How many apples did Raju bought?</p>
+            <div class="options">
+                <input type="radio" id="q1-option1" name="question1" value="option1">
+                <label for="q1-option1">a) 10</label><br>
+                <input type="radio" id="q1-option2" name="question1" value="option2">
+                <label for="q1-option2">b) 12</label><br>
+                <input type="radio" id="q1-option3" name="question1" value="option3">
+                <label for="q1-option3">c) 1</label><br>
+                <input type="radio" id="q1-option4" name="question1" value="option4">
+                <label for="q1-option4">d) 100</label><br>
+            </div>
+        </div>
+        <div class="question" id="question2">
+            <p>2. Raju is going to visit the USA next week. <br>Where is Raju going next week?</p>
+            <div class="options">
+                <input type="radio" id="q2-option1" name="question2" value="option1">
+                <label for="q2-option1">a) India</label><br>
+                <input type="radio" id="q2-option2" name="question2" value="option2">
+                <label for="q2-option2">b) USA</label><br>
+                <input type="radio" id="q2-option3" name="question2" value="option3">
+                <label for="q2-option3">c) China</label><br>
+                <input type="radio" id="q2-option4" name="question2" value="option4">
+                <label for="q2-option4">d) England</label><br>
+            </div>
+        </div>
+        <div class="question" id="question3">
+            <p>3. At present, Raju is 20 years old <br>What is Raju's present Age?</p>
+            <div class="options">
+                <input type="radio" id="q3-option1" name="question3" value="option1">
+                <label for="q3-option1">a) 23</label><br>
+                <input type="radio" id="q3-option2" name="question3" value="option2">
+                <label for="q3-option2">b) 13</label><br>
+                <input type="radio" id="q3-option3" name="question3" value="option3">
+                <label for="q3-option3">c) 10</label><br>
+                <input type="radio" id="q3-option4" name="question3" value="option4">
+                <label for="q3-option4">d) 20</label><br>
+            </div>
+        </div>
+        <div class="question" id="question4">
+            <p>4. Raju was born and brought up in India. <br>Where was Raju born?</p>
+            <div class="options">
+                <input type="radio" id="q4-option1" name="question4" value="option1">
+                <label for="q4-option1">a) India</label><br>
+                <input type="radio" id="q4-option2" name="question4" value="option2">
+                <label for="q4-option2">b) USA</label><br>
+                <input type="radio" id="q4-option3" name="question4" value="option3">
+                <label for="q4-option3">c) Finland</label><br>
+                <input type="radio" id="q4-option4" name="question4" value="option4">
+                <label for="q4-option4">d) China</label><br>
+            </div>
+        </div>
+        <div class="question" id="question5">
+            <p>5. What is 5 + 5 equal to?</p>
+            <div class="options">
+                <input type="radio" id="q5-option1" name="question5" value="option1">
+                <label for="q5-option1">a) 5</label><br>
+                <input type="radio" id="q5-option2" name="question5" value="option2">
+                <label for="q5-option2">b) 2</label><br>
+                <input type="radio" id="q5-option3" name="question5" value="option3">
+                <label for="q5-option3">c) 55</label><br>
+                <input type="radio" id="q5-option4" name="question5" value="option4">
+                <label for="q5-option4">d) 10</label><br>
+            </div>
+        </div>
+        <div class="submit">
+            <button id="submitBtn">Submit</button>
+        </div>
+        <div class="score">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+<script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+    let score = 0;
+
+    // Question 1
+    const q1Options = document.getElementsByName('question1');
+    q1Options.forEach(option => {
+        if (option.checked && option.value === 'option1') {
+            score += 1;
+        }
+    });
+
+    // Question 2
+    const q2Options = document.getElementsByName('question2');
+    q2Options.forEach(option => {
+        if (option.checked && option.value === 'option2') {
+            score += 1;
+        }
+    });
+    // Question 3
+    const q3Options = document.getElementsByName('question3');
+    q3Options.forEach(option => {
+        if (option.checked && option.value === 'option4') {
+            score += 1;
+        }
+    });
+
+    // Question 4
+    const q4Options = document.getElementsByName('question4');
+    q4Options.forEach(option => {
+        if (option.checked && option.value === 'option1') {
+            score += 1;
+        }
+    });
+    // Question 5
+    const q5Options = document.getElementsByName('question5');
+    q5Options.forEach(option => {
+        if (option.checked && option.value === 'option4') {
+            score += 1;
+        }
+    });
+
+    // Update score
+    document.getElementById('score').textContent = score;
+});
+
+</script>
+</html>
